@@ -119,7 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (project.images && project.images.length) {
       html += '<div class="modal-images">';
       project.images.forEach((img) => {
-        html += `<img src="real/${img}" alt="${project.title}">`;
+        // Note : les images sont placées à la racine du dépôt sur GitHub Pages.  
+        // Auparavant, on préfixait le chemin par `real/`, mais GitHub ne supporte
+        // pas l’envoi de fichiers dans un sous-dossier via l’interface Web.  
+        // On retire donc ce préfixe pour que les images racine soient chargées correctement.
+        html += `<img src="${img}" alt="${project.title}">`;
       });
       html += '</div>';
     }
