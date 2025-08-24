@@ -274,6 +274,7 @@ h1, h2, h3, h4 {
   margin-bottom: 1.5rem;
 }
 
+/* Filter chips for the gallery */
 .chip {
   padding: 0.5rem 1rem;
   border: 1px solid var(--primary);
@@ -282,12 +283,20 @@ h1, h2, h3, h4 {
   color: var(--primary);
   font-size: 0.9rem;
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.chip.active,
+/* Active chip uses the accent colour with dark text to stand out */
+.chip.active {
+  background-color: var(--accent);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* On hover, chips take on a soft accent background */
 .chip:hover {
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: var(--accent-soft);
+  color: var(--text);
 }
 
 .gallery-grid {
@@ -573,14 +582,207 @@ h1, h2, h3, h4 {
 footer {
   background-color: var(--primary);
   color: var(--plaster);
-  padding: 32px 0;
-  font-size: 0.8rem;
-  text-align: center;
+  padding: 48px 0;
+  font-size: 0.9rem;
 }
 
-footer a {
+/* Accent pill in hero */
+.pill {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 24px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Step numbers in process timeline */
+.process .step-number {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--plaster);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Accent underline after section headings */
+.realisations h2::after,
+.services h2::after,
+.process h2::after,
+.zone h2::after,
+.avis h2::after,
+.contact h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background-color: var(--accent);
+  margin-top: 0.25rem;
+  border-radius: 2px;
+}
+
+/* Zone list as grid and map-pin icons */
+.zone .communes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.25rem 1rem;
+  list-style: none;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+.zone .communes-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.zone .communes-list li::before {
+  content: '\1F4CD';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+}
+
+/* Floating WhatsApp button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  background-color: var(--accent);
+  color: var(--plaster);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.whatsapp-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Adjust chips spacing in contact form */
+.contact .chips-select label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact .chips-select input {
+  margin-right: 0.25rem;
+}
+
+/* Chip style for contact type selection */
+.contact .chip-choice input {
+  display: none;
+}
+
+.contact .chip-choice span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary);
+  border-radius: 24px;
+  color: var(--primary);
+  background-color: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.contact .chip-choice input:checked + span {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Improve list spacing in services */
+.service-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.service-card ul li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+}
+
+.service-card ul li::before {
+  content: '\2022';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Ensure process timeline connectors appear underneath numbers */
+.process .step:before {
+  z-index: -1;
+}
+
+/* Footer layout and link styling */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+  text-align: left;
+}
+
+.footer-col {
+  color: var(--plaster);
+  font-size: 0.9rem;
+}
+
+.brand-col .footer-brand {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--plaster);
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 0.25rem;
+}
+
+.footer-nav a {
+  color: var(--plaster);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-nav a:hover {
   color: var(--accent-soft);
   text-decoration: underline;
+}
+
+.contact-col p {
+  margin-bottom: 0.25rem;
 }
 
 @media (max-width: 768px) {
@@ -591,6 +793,11 @@ footer a {
   .gallery-grid,
   .avis-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
   }
 }
 

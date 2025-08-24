@@ -40,6 +40,8 @@
     <section class="hero">
       <div class="container hero-content">
         <div class="hero-text">
+          <!-- Small accent pill to emphasise the métier -->
+          <span class="pill">Peinture</span>
           <h1>Peintre à Béziers.</h1>
           <p class="sub">Intérieur, façades &amp; chaux — Hérault &amp; littoral. Devis sous 24 h.</p>
           <div class="cta-buttons">
@@ -48,7 +50,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="images/hero-placeholder.webp" alt="Rouleau de peinture sur enduit">
+          <img src="images/hero.webp" alt="Illustration d’un rouleau appliquant une peinture à la chaux sur un mur" loading="lazy">
         </div>
       </div>
     </section>
@@ -93,26 +95,26 @@
           <button class="chip" data-filter="deco">Déco</button>
         </div>
         <div class="gallery-grid">
-          <!-- Gallery items (placeholders) -->
+          <!-- Gallery items using real projects and generated texture -->
           <div class="gallery-item" data-category="interieur">
-            <img src="images/project1.jpg" alt="Projet intérieur 1">
+            <img src="images/project1.webp" alt="Illustration artistique d’un séjour moderne avec murs pastel et accents terracotta" loading="lazy">
             <h4>Séjour contemporain</h4>
-            <p class="location">Béziers</p>
-            <p class="notes">RAL 9016, Finition satin</p>
+            <p class="location">Sérignan</p>
+            <p class="notes">Pastels &amp; accents</p>
           </div>
           <div class="gallery-item" data-category="facades">
-            <img src="images/project2.jpg" alt="Projet façade 1">
-            <h4>Façade rénovée</h4>
-            <p class="location">Sérignan</p>
-            <p class="notes">Enduit à la chaux</p>
+            <img src="images/project2.webp" alt="Illustration artistique d’une cuisine cosy avec murs en chaux, placards verts pâle et comptoir en bois" loading="lazy">
+            <h4>Cuisine épurée</h4>
+            <p class="location">Marseillan</p>
+            <p class="notes">Limewash &amp; bois</p>
           </div>
           <div class="gallery-item" data-category="chaux">
-            <img src="images/project3.jpg" alt="Projet chaux 1">
-            <h4>Salon badigeon</h4>
-            <p class="location">Agde</p>
-            <p class="notes">Pigments naturels</p>
+            <img src="images/project3.webp" alt="Illustration artistique d’une façade méditerranéenne avec murs pêche et volets turquoise" loading="lazy">
+            <h4>Façade ensoleillée</h4>
+            <p class="location">Béziers</p>
+            <p class="notes">Pastel pêche &amp; turquoise</p>
           </div>
-          <!-- Additional items can be added here -->
+          <!-- You can add more realisations here -->
         </div>
       </div>
     </section>
@@ -164,27 +166,27 @@
         <h2>Process</h2>
         <div class="timeline">
           <div class="step">
-            <div class="dot"></div>
+            <span class="step-number">1</span>
             <h4>Visite &amp; mesures</h4>
             <p>Nous visitons, prenons les cotes et définissons vos besoins.</p>
           </div>
           <div class="step">
-            <div class="dot"></div>
+            <span class="step-number">2</span>
             <h4>Devis &amp; planning</h4>
             <p>Devis détaillé sous 24 h et planification des dates d’intervention.</p>
           </div>
           <div class="step">
-            <div class="dot"></div>
+            <span class="step-number">3</span>
             <h4>Protection &amp; préparation</h4>
             <p>Mise en place des protections et préparation des supports.</p>
           </div>
           <div class="step">
-            <div class="dot"></div>
+            <span class="step-number">4</span>
             <h4>Application &amp; contrôle</h4>
             <p>Application soignée et vérification des finitions.</p>
           </div>
           <div class="step">
-            <div class="dot"></div>
+            <span class="step-number">5</span>
             <h4>Réception &amp; garantie</h4>
             <p>Levée des réserves, garantie RC Pro et décennale.</p>
           </div>
@@ -246,10 +248,10 @@
           <div class="form-step" data-step="1">
             <h3>Type de projet</h3>
             <div class="chips-select">
-              <label><input type="checkbox" name="type" value="interieur"> Intérieur</label>
-              <label><input type="checkbox" name="type" value="facades"> Façades</label>
-              <label><input type="checkbox" name="type" value="chaux"> Chaux</label>
-              <label><input type="checkbox" name="type" value="deco"> Déco</label>
+              <label class="chip-choice"><input type="checkbox" name="type" value="interieur"><span>Intérieur</span></label>
+              <label class="chip-choice"><input type="checkbox" name="type" value="facades"><span>Façades</span></label>
+              <label class="chip-choice"><input type="checkbox" name="type" value="chaux"><span>Chaux</span></label>
+              <label class="chip-choice"><input type="checkbox" name="type" value="deco"><span>Déco</span></label>
             </div>
             <button type="button" class="btn primary-btn next-btn">Suivant</button>
           </div>
@@ -290,13 +292,33 @@
             <button type="submit" class="btn primary-btn submit-btn">Recevoir un devis sous 24 h</button>
           </div>
         </form>
+        <!-- Floating WhatsApp button -->
+        <a href="#" class="whatsapp-button" aria-label="Contact via WhatsApp">💬</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>© 2025 Orb &amp; Chaux — Peinture &amp; Façades. SIRET 88906486100012. 5 Av. du Général de Gaulle, 94160 Saint‑Mandé.</p>
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <p class="footer-brand">Orb &amp; Chaux</p>
+        <p>Peinture &amp; Façades — Béziers</p>
+      </div>
+      <div class="footer-col nav-col">
+        <ul class="footer-nav">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#zone">Zone</a></li>
+          <li><a href="#avis">Avis</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col contact-col">
+        <p>SIRET 88906486100012</p>
+        <p>5 Av. du Général de Gaulle, 94160 Saint‑Mandé</p>
+      </div>
     </div>
   </footer>
 
