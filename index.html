@@ -45,12 +45,13 @@
           <h1>Peintre à Béziers.</h1>
           <p class="sub">Intérieur, façades &amp; chaux — Hérault &amp; littoral. Devis sous 24 h.</p>
           <div class="cta-buttons">
-            <a href="#contact" class="btn primary-btn">Demander un devis</a>
-            <a href="#realisations" class="btn secondary-btn">Voir nos réalisations</a>
+                <a href="#contact" class="btn primary-btn accent-btn">Demander un devis</a>
+                <a href="#realisations" class="btn secondary-btn">Voir nos réalisations</a>
           </div>
         </div>
         <div class="hero-image">
-          <img src="images/hero.webp" alt="Illustration d’un rouleau appliquant une peinture à la chaux sur un mur" loading="lazy">
+              <!-- Note : les images sont à la racine du dépôt sur GitHub Pages -->
+              <img src="hero.webp" alt="Illustration d’un rouleau appliquant une peinture à la chaux sur un mur" loading="lazy">
         </div>
       </div>
     </section>
@@ -96,20 +97,20 @@
         </div>
         <div class="gallery-grid">
           <!-- Gallery items using real projects and generated texture -->
-          <div class="gallery-item" data-category="interieur">
-            <img src="images/project1.webp" alt="Illustration artistique d’un séjour moderne avec murs pastel et accents terracotta" loading="lazy">
+              <div class="gallery-item" data-category="interieur">
+                <img src="project1.webp" alt="Illustration artistique d’un séjour moderne avec murs pastel et accents terracotta" loading="lazy">
             <h4>Séjour contemporain</h4>
             <p class="location">Sérignan</p>
             <p class="notes">Pastels &amp; accents</p>
           </div>
-          <div class="gallery-item" data-category="facades">
-            <img src="images/project2.webp" alt="Illustration artistique d’une cuisine cosy avec murs en chaux, placards verts pâle et comptoir en bois" loading="lazy">
+              <div class="gallery-item" data-category="facades">
+                <img src="project2.webp" alt="Illustration artistique d’une cuisine cosy avec murs en chaux, placards verts pâle et comptoir en bois" loading="lazy">
             <h4>Cuisine épurée</h4>
             <p class="location">Marseillan</p>
             <p class="notes">Limewash &amp; bois</p>
           </div>
-          <div class="gallery-item" data-category="chaux">
-            <img src="images/project3.webp" alt="Illustration artistique d’une façade méditerranéenne avec murs pêche et volets turquoise" loading="lazy">
+              <div class="gallery-item" data-category="chaux">
+                <img src="project3.webp" alt="Illustration artistique d’une façade méditerranéenne avec murs pêche et volets turquoise" loading="lazy">
             <h4>Façade ensoleillée</h4>
             <p class="location">Béziers</p>
             <p class="notes">Pastel pêche &amp; turquoise</p>
@@ -247,6 +248,7 @@
         <form id="devis-form">
           <div class="form-step" data-step="1">
             <h3>Type de projet</h3>
+            <p class="form-helper">Sélectionnez votre type de projet :</p>
             <div class="chips-select">
               <label class="chip-choice"><input type="checkbox" name="type" value="interieur"><span>Intérieur</span></label>
               <label class="chip-choice"><input type="checkbox" name="type" value="facades"><span>Façades</span></label>
@@ -318,6 +320,10 @@
       <div class="footer-col contact-col">
         <p>SIRET 88906486100012</p>
         <p>5 Av. du Général de Gaulle, 94160 Saint‑Mandé</p>
+      </div>
+      <div class="footer-col legal-col">
+        <p><a href="#">Mentions légales</a></p>
+        <p><a href="#">RGPD</a></p>
       </div>
     </div>
   </footer>

@@ -98,14 +98,15 @@ h1, h2, h3, h4 {
 }
 
 .nav-links .cta {
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: var(--accent);
+  color: var(--text);
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
 
 .nav-links .cta:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--accent-soft);
+  color: var(--text);
 }
 
 /* Mobile navigation */
@@ -189,6 +190,16 @@ h1, h2, h3, h4 {
 }
 .primary-btn:hover {
   background-color: var(--primary-dark);
+}
+
+/* Accent-coloured call-to-action buttons */
+.accent-btn {
+  background-color: var(--accent);
+  color: var(--text);
+}
+.accent-btn:hover {
+  background-color: var(--accent-soft);
+  color: var(--text);
 }
 
 .secondary-btn {
@@ -452,19 +463,6 @@ h1, h2, h3, h4 {
   background-color: var(--white);
 }
 
-.zone .communes-list {
-  columns: 2;
-  column-gap: 2rem;
-  list-style: none;
-  margin-top: 0.5rem;
-  color: var(--muted);
-}
-
-@media (max-width: 480px) {
-  .zone .communes-list {
-    columns: 1;
-  }
-}
 
 /* Avis */
 .avis {
@@ -544,6 +542,13 @@ h1, h2, h3, h4 {
   font-size: 0.9rem;
 }
 
+/* Helper text for form sections */
+.form-helper {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
 .contact input,
 .contact select {
   width: 100%;
@@ -575,6 +580,11 @@ h1, h2, h3, h4 {
 }
 
 .contact .submit-btn {
+  width: 100%;
+}
+
+/* Make next buttons full width */
+.contact .next-btn {
   width: 100%;
 }
 
@@ -741,7 +751,7 @@ footer {
 /* Footer layout and link styling */
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   align-items: start;
   text-align: left;
@@ -777,6 +787,16 @@ footer {
 }
 
 .footer-nav a:hover {
+  color: var(--accent-soft);
+  text-decoration: underline;
+}
+
+/* Legal links styling */
+.legal-col a {
+  color: var(--plaster);
+  text-decoration: none;
+}
+.legal-col a:hover {
   color: var(--accent-soft);
   text-decoration: underline;
 }
