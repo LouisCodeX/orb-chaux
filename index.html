@@ -42,7 +42,10 @@
         <div class="hero-text">
           <!-- Small accent pill to emphasise the métier -->
           <span class="pill">Peinture</span>
-          <h1>Peintre à Béziers.</h1>
+          <!--
+            Utiliser le pluriel pour refléter qu'il s'agit d'une entreprise et non d'un artisan isolé.
+          -->
+          <h1>Entreprise de peinture à Béziers.</h1>
           <p class="sub">Intérieur, façades &amp; chaux — Hérault &amp; littoral. Devis sous 24 h.</p>
           <div class="cta-buttons">
                 <a href="#contact" class="btn primary-btn accent-btn">Demander un devis</a>
@@ -61,22 +64,22 @@
       <div class="container">
         <div class="promise-grid">
           <div class="promise-card">
-            <div class="icon"><!-- Intentionally left blank; icons to be added later --></div>
+            <div class="icon">🧹</div>
             <h3>Propreté de chantier</h3>
             <p>Protections soignées, remise en état après travaux.</p>
           </div>
           <div class="promise-card">
-            <div class="icon"></div>
+            <div class="icon">⏰</div>
             <h3>Délais tenus</h3>
             <p>Planning signé, début/fin fixés avant démarrage.</p>
           </div>
           <div class="promise-card">
-            <div class="icon"></div>
+            <div class="icon">🎨</div>
             <h3>Conseil couleur</h3>
             <p>Échantillons posés sur place, teintes RAL/NCS à l’appui.</p>
           </div>
           <div class="promise-card">
-            <div class="icon"></div>
+            <div class="icon">🛡️</div>
             <h3>Assuré &amp; couvert</h3>
             <p>RC Pro + décennale. Réserves levées avant solde.</p>
           </div>
@@ -97,24 +100,24 @@
         </div>
         <div class="gallery-grid">
           <!-- Gallery items using real projects and generated texture -->
-              <div class="gallery-item" data-category="interieur">
+              <div class="gallery-item" data-category="interieur" data-project="sejour">
                 <img src="project1.webp" alt="Illustration artistique d’un séjour moderne avec murs pastel et accents terracotta" loading="lazy">
-            <h4>Séjour contemporain</h4>
-            <p class="location">Sérignan</p>
-            <p class="notes">Pastels &amp; accents</p>
-          </div>
-              <div class="gallery-item" data-category="facades">
+                <h4>Séjour contemporain</h4>
+                <p class="location">Sérignan</p>
+                <p class="notes">Pastels &amp; accents</p>
+              </div>
+              <div class="gallery-item" data-category="facades" data-project="cuisine">
                 <img src="project2.webp" alt="Illustration artistique d’une cuisine cosy avec murs en chaux, placards verts pâle et comptoir en bois" loading="lazy">
-            <h4>Cuisine épurée</h4>
-            <p class="location">Marseillan</p>
-            <p class="notes">Limewash &amp; bois</p>
-          </div>
-              <div class="gallery-item" data-category="chaux">
+                <h4>Cuisine épurée</h4>
+                <p class="location">Marseillan</p>
+                <p class="notes">Limewash &amp; bois</p>
+              </div>
+              <div class="gallery-item" data-category="chaux" data-project="facade">
                 <img src="project3.webp" alt="Illustration artistique d’une façade méditerranéenne avec murs pêche et volets turquoise" loading="lazy">
-            <h4>Façade ensoleillée</h4>
-            <p class="location">Béziers</p>
-            <p class="notes">Pastel pêche &amp; turquoise</p>
-          </div>
+                <h4>Façade ensoleillée</h4>
+                <p class="location">Béziers</p>
+                <p class="notes">Pastel pêche &amp; turquoise</p>
+              </div>
           <!-- You can add more realisations here -->
         </div>
       </div>
@@ -128,33 +131,33 @@
           <div class="service-card">
             <h3>Intérieur</h3>
             <ul>
-              <li>Impression adaptée au support</li>
-              <li>Finitions matte, satinée, velours</li>
-              <li>Teintes personnalisées RAL/NCS</li>
+              <li>Sous‑couche adaptée (plâtre, bois, métal)</li>
+              <li>Murs : RAL 9016 (blanc), finitions mate ou satinée</li>
+              <li>Boiseries : RAL 5008 (bleu‑vert)</li>
             </ul>
           </div>
           <div class="service-card">
             <h3>Façades</h3>
             <ul>
-              <li>Ravalement et nettoyage</li>
-              <li>Protection anti-humidité</li>
-              <li>Isolation par l’extérieur</li>
+              <li>Nettoyage et ravalement complet</li>
+              <li>Badigeon de chaux RAL 1015 (ivoire)</li>
+              <li>Traitement fongicide et hydrofuge</li>
             </ul>
           </div>
           <div class="service-card">
             <h3>Chaux &amp; déco</h3>
             <ul>
-              <li>Badigeons traditionnels</li>
-              <li>Enduits texturés</li>
-              <li>Patines décoratives</li>
+              <li>Badigeons à la chaux aérienne</li>
+              <li>Enduits texturés : tadelakt, stucco</li>
+              <li>Pigments naturels : ocres et terres</li>
             </ul>
           </div>
           <div class="service-card">
             <h3>Éco</h3>
             <ul>
-              <li>Peintures bas COV</li>
-              <li>Conseils aération</li>
-              <li>Compatibles bâti ancien</li>
+              <li>Peintures biosourcées, label A+</li>
+              <li>Peintures bas COV (&lt; 1 g/L)</li>
+              <li>Conseils ventilation et bâti ancien</li>
             </ul>
           </div>
         </div>
@@ -298,6 +301,14 @@
         <a href="#" class="whatsapp-button" aria-label="Contact via WhatsApp">💬</a>
       </div>
     </section>
+
+    <!-- Modal for project details (hidden by default) -->
+    <div id="project-modal" class="modal" hidden>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Fermer le détail">×</button>
+        <div class="modal-body"><!-- Contenu dynamique inséré par script.js --></div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -319,7 +330,8 @@
       </div>
       <div class="footer-col contact-col">
         <p>SIRET 88906486100012</p>
-        <p>5 Av. du Général de Gaulle, 94160 Saint‑Mandé</p>
+        <p>1 rue de l’Amour, 34340 Marseillan</p>
+        <p>Tél. 06 44 68 86 27</p>
       </div>
       <div class="footer-col legal-col">
         <p><a href="#">Mentions légales</a></p>

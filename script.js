@@ -21,6 +21,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButtons = form.querySelectorAll('.next-btn');
     nextButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
+        // Validate current step before proceeding
+        if (currentStep === 0) {
+          // Step 1: ensure at least one project type is selected
+          const checked = form.querySelectorAll('input[name="type"]:checked');
+          if (!checked.length) {
+            alert('Veuillez sélectionner au moins un type de projet.');
+            return;
+          }
+        }
+        if (currentStep === 1) {
+          // Step 2: ensure surface has a value
+          const surfaceInput = form.querySelector('input[name="surface"]');
+          if (surfaceInput && surfaceInput.value.trim() === '') {
+            alert('Veuillez indiquer la surface en mètres carrés.');
+            return;
+          }
+        }
         if (currentStep < steps.length - 1) {
           currentStep++;
           showStep(currentStep);
@@ -51,6 +68,93 @@ document.addEventListener('DOMContentLoaded', function () {
           item.style.display = 'none';
         }
       });
+    });
+  });
+
+  // Project modal logic
+  const projects = {
+    sejour: {
+      title: 'Séjour contemporain',
+      location: 'Sérignan',
+      context: 'Rénovation complète d’un séjour avec mise en valeur des volumes et application de teintes pastel sur les murs.',
+      teintes: 'Murs : RAL 9016 mat ; Boiseries : NCS S0502-Y',
+      produits: 'Peintures écologiques sans COV',
+      delais: '5 jours',
+      surface: '32 m²',
+      images: ['living-room.webp']
+    },
+    cuisine: {
+      title: 'Cuisine épurée',
+      location: 'Marseillan',
+      context: 'Rafraîchissement d’une cuisine mansardée avec réfection des placards et plans de travail.',
+      teintes: 'Placards : RAL 6021 satiné ; Crédence : NCS S2500-N',
+      produits: 'Laques résistantes à l’humidité',
+      delais: '4 jours',
+      surface: '18 m²',
+      images: ['kitchen-close.webp','kitchen-living.webp']
+    },
+    facade: {
+      title: 'Façade ensoleillée',
+      location: 'Béziers',
+      context: 'Réfection d’une façade R+2 avec badigeon à la chaux et volets huilés.',
+      teintes: 'Façade : RAL 3012 pêche ; Volets : RAL 6027 turquoise',
+      produits: 'Badigeon de chaux aérienne et huiles naturelles',
+      delais: '7 jours',
+      surface: '85 m²',
+      images: ['facade.webp']
+    }
+  };
+
+  const modal = document.getElementById('project-modal');
+  const modalBody = modal ? modal.querySelector('.modal-body') : null;
+  const modalClose = modal ? modal.querySelector('.modal-close') : null;
+
+  function openModal(key) {
+    if (!modal || !modalBody) return;
+    const project = projects[key];
+    if (!project) return;
+    // Build HTML content for the modal
+    let html = `<h3>${project.title} — ${project.location}</h3>`;
+    // Images
+    if (project.images && project.images.length) {
+      html += '<div class="modal-images">';
+      project.images.forEach((img) => {
+        html += `<img src="real/${img}" alt="${project.title}">`;
+      });
+      html += '</div>';
+    }
+    html += `<p><strong>Contexte :</strong> ${project.context}</p>`;
+    html += `<p><strong>Teintes :</strong> ${project.teintes}</p>`;
+    html += `<p><strong>Produits :</strong> ${project.produits}</p>`;
+    html += `<p><strong>Délais :</strong> ${project.delais}</p>`;
+    html += `<p><strong>Surface :</strong> ${project.surface}</p>`;
+    modalBody.innerHTML = html;
+    modal.removeAttribute('hidden');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.setAttribute('hidden', '');
+    document.body.classList.remove('modal-open');
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+  if (modal) {
+    modal.addEventListener('click', function (e) {
+      // close when clicking outside content
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  document.querySelectorAll('.gallery-item').forEach((item) => {
+    item.addEventListener('click', function () {
+      const key = item.dataset.project;
+      openModal(key);
     });
   });
 });
