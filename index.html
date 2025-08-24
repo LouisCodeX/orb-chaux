@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orb &amp; Chaux — Peinture &amp; Façades</title>
+  <!-- Import fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="#home">
+          <span class="wordmark">Orb &amp; Chaux</span>
+          <span class="descriptor">Peinture &amp; Façades — Béziers</span>
+        </a>
+      </div>
+      <nav>
+        <button class="menu-toggle" aria-label="Afficher le menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#zone">Zone</a></li>
+          <li><a href="#avis">Avis</a></li>
+          <li><a href="#contact" class="cta">Devis 24 h</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Peintre à Béziers.</h1>
+          <p class="sub">Intérieur, façades &amp; chaux — Hérault &amp; littoral. Devis sous 24 h.</p>
+          <div class="cta-buttons">
+            <a href="#contact" class="btn primary-btn">Demander un devis</a>
+            <a href="#realisations" class="btn secondary-btn">Voir nos réalisations</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/hero-placeholder.webp" alt="Rouleau de peinture sur enduit">
+        </div>
+      </div>
+    </section>
+
+    <!-- Promises section -->
+    <section class="promises">
+      <div class="container">
+        <div class="promise-grid">
+          <div class="promise-card">
+            <div class="icon"><!-- Intentionally left blank; icons to be added later --></div>
+            <h3>Propreté de chantier</h3>
+            <p>Protections soignées, remise en état après travaux.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon"></div>
+            <h3>Délais tenus</h3>
+            <p>Planning signé, début/fin fixés avant démarrage.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon"></div>
+            <h3>Conseil couleur</h3>
+            <p>Échantillons posés sur place, teintes RAL/NCS à l’appui.</p>
+          </div>
+          <div class="promise-card">
+            <div class="icon"></div>
+            <h3>Assuré &amp; couvert</h3>
+            <p>RC Pro + décennale. Réserves levées avant solde.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réalisations section -->
+    <section id="realisations" class="realisations">
+      <div class="container">
+        <h2>Réalisations</h2>
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all">Tout</button>
+          <button class="chip" data-filter="interieur">Intérieur</button>
+          <button class="chip" data-filter="facades">Façades</button>
+          <button class="chip" data-filter="chaux">Chaux</button>
+          <button class="chip" data-filter="deco">Déco</button>
+        </div>
+        <div class="gallery-grid">
+          <!-- Gallery items (placeholders) -->
+          <div class="gallery-item" data-category="interieur">
+            <img src="images/project1.jpg" alt="Projet intérieur 1">
+            <h4>Séjour contemporain</h4>
+            <p class="location">Béziers</p>
+            <p class="notes">RAL 9016, Finition satin</p>
+          </div>
+          <div class="gallery-item" data-category="facades">
+            <img src="images/project2.jpg" alt="Projet façade 1">
+            <h4>Façade rénovée</h4>
+            <p class="location">Sérignan</p>
+            <p class="notes">Enduit à la chaux</p>
+          </div>
+          <div class="gallery-item" data-category="chaux">
+            <img src="images/project3.jpg" alt="Projet chaux 1">
+            <h4>Salon badigeon</h4>
+            <p class="location">Agde</p>
+            <p class="notes">Pigments naturels</p>
+          </div>
+          <!-- Additional items can be added here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Services section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>Intérieur</h3>
+            <ul>
+              <li>Impression adaptée au support</li>
+              <li>Finitions matte, satinée, velours</li>
+              <li>Teintes personnalisées RAL/NCS</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Façades</h3>
+            <ul>
+              <li>Ravalement et nettoyage</li>
+              <li>Protection anti-humidité</li>
+              <li>Isolation par l’extérieur</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Chaux &amp; déco</h3>
+            <ul>
+              <li>Badigeons traditionnels</li>
+              <li>Enduits texturés</li>
+              <li>Patines décoratives</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Éco</h3>
+            <ul>
+              <li>Peintures bas COV</li>
+              <li>Conseils aération</li>
+              <li>Compatibles bâti ancien</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process section -->
+    <section id="process" class="process">
+      <div class="container">
+        <h2>Process</h2>
+        <div class="timeline">
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Visite &amp; mesures</h4>
+            <p>Nous visitons, prenons les cotes et définissons vos besoins.</p>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Devis &amp; planning</h4>
+            <p>Devis détaillé sous 24 h et planification des dates d’intervention.</p>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Protection &amp; préparation</h4>
+            <p>Mise en place des protections et préparation des supports.</p>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Application &amp; contrôle</h4>
+            <p>Application soignée et vérification des finitions.</p>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Réception &amp; garantie</h4>
+            <p>Levée des réserves, garantie RC Pro et décennale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zone section -->
+    <section id="zone" class="zone">
+      <div class="container">
+        <h2>Zone d’intervention</h2>
+        <p>Déplacement gratuit pour devis dans ces zones :</p>
+        <ul class="communes-list">
+          <li>Béziers</li>
+          <li>Villeneuve-lès-Béziers</li>
+          <li>Sérignan</li>
+          <li>Valras-Plage</li>
+          <li>Colombiers</li>
+          <li>Cers</li>
+          <li>Sauvian</li>
+          <li>Boujan</li>
+          <li>Pézenas</li>
+          <li>Agde</li>
+          <li>Marseillan</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Avis section -->
+    <section id="avis" class="avis">
+      <div class="container">
+        <h2>Avis</h2>
+        <div class="avis-grid">
+          <div class="avis-card">
+            <div class="stars">★★★★★</div>
+            <p>« Travail impeccable, délais respectés et résultat sublime. »</p>
+            <p class="author">— Marie L., Béziers</p>
+          </div>
+          <div class="avis-card">
+            <div class="stars">★★★★★</div>
+            <p>« Très bon conseil couleur et chantier laissé propre. »</p>
+            <p class="author">— Hugo S., Sérignan</p>
+          </div>
+          <div class="avis-card">
+            <div class="stars">★★★★★</div>
+            <p>« Une entreprise sérieuse et à l’écoute, je recommande. »</p>
+            <p class="author">— Claire D., Agde</p>
+          </div>
+        </div>
+        <p class="more-reviews"><a href="https://google.com" target="_blank">Voir tous les avis Google</a></p>
+      </div>
+    </section>
+
+    <!-- Contact / Devis express section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact — Devis Express</h2>
+        <form id="devis-form">
+          <div class="form-step" data-step="1">
+            <h3>Type de projet</h3>
+            <div class="chips-select">
+              <label><input type="checkbox" name="type" value="interieur"> Intérieur</label>
+              <label><input type="checkbox" name="type" value="facades"> Façades</label>
+              <label><input type="checkbox" name="type" value="chaux"> Chaux</label>
+              <label><input type="checkbox" name="type" value="deco"> Déco</label>
+            </div>
+            <button type="button" class="btn primary-btn next-btn">Suivant</button>
+          </div>
+          <div class="form-step" data-step="2" hidden>
+            <h3>Détails</h3>
+            <label>Surface (m²)
+              <input type="number" name="surface" required>
+            </label>
+            <label>État des supports
+              <select name="etat">
+                <option value="neuf">Neuf</option>
+                <option value="bon">Bon</option>
+                <option value="a-reprendre">À reprendre</option>
+              </select>
+            </label>
+            <label>Photos (max 3)
+              <input type="file" name="photos" accept="image/*" multiple>
+            </label>
+            <button type="button" class="btn primary-btn next-btn">Suivant</button>
+          </div>
+          <div class="form-step" data-step="3" hidden>
+            <h3>Coordonnées</h3>
+            <label>Adresse
+              <input type="text" name="adresse" required>
+            </label>
+            <label>Ville
+              <input type="text" name="ville" required>
+            </label>
+            <label>Téléphone
+              <input type="tel" name="telephone" required>
+            </label>
+            <label>Email
+              <input type="email" name="email" required>
+            </label>
+            <label>Créneau souhaité
+              <input type="text" name="creneau">
+            </label>
+            <button type="submit" class="btn primary-btn submit-btn">Recevoir un devis sous 24 h</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Orb &amp; Chaux — Peinture &amp; Façades. SIRET 88906486100012. 5 Av. du Général de Gaulle, 94160 Saint‑Mandé.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
