@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="hero.webp">
 </head>
-    <link rel="icon" type="image/webp" href="hero.webp">
 <body>
   <header class="navbar">
     <div class="container">
@@ -22,9 +23,7 @@
         </a>
       </div>
       <nav>
-<button class="menu-toggle" id="nav-toggle" aria-label="Menu">≡</button>
-
-
+        <button class="menu-toggle" id="nav-toggle" aria-label="Menu">≡</button>
         <ul class="nav-links">
           <li><a href="#home">Accueil</a></li>
           <li><a href="#realisations">Réalisations</a></li>
@@ -43,21 +42,18 @@
     <section class="hero">
       <div class="container hero-content">
         <div class="hero-text">
-          <!-- Small accent pill to emphasise the métier -->
           <span class="pill">Peinture</span>
-          <!--
-            Utiliser le pluriel pour refléter qu'il s'agit d'une entreprise et non d'un artisan isolé.
-          -->
+          <!-- Utiliser le pluriel pour refléter qu'il s'agit d'une entreprise et non d'un artisan isolé. -->
           <h1>Entreprise de peinture à Béziers.</h1>
           <p class="sub">Intérieur, façades &amp; chaux — Hérault &amp; littoral. Devis sous 24 h.</p>
           <div class="cta-buttons">
-                <a href="#contact" class="btn primary-btn accent-btn">Demander un devis</a>
-                <a href="#realisations" class="btn secondary-btn">Voir nos réalisations</a>
+            <a href="#contact" class="btn primary-btn accent-btn">Demander un devis</a>
+            <a href="#realisations" class="btn secondary-btn">Voir nos réalisations</a>
           </div>
         </div>
         <div class="hero-image">
-              <!-- Note : les images sont à la racine du dépôt sur GitHub Pages -->
-              <img src="hero.webp" alt="Illustration d’un rouleau appliquant une peinture à la chaux sur un mur" loading="lazy">
+          <!-- Note : les images sont à la racine du dépôt sur GitHub Pages -->
+          <img src="hero.webp" alt="Illustration d’un rouleau appliquant une peinture à la chaux sur un mur" loading="lazy">
         </div>
       </div>
     </section>
@@ -101,31 +97,35 @@
           <button class="chip" data-filter="chaux">Chaux</button>
           <button class="chip" data-filter="deco">Déco</button>
         </div>
-     <div class="gallery-grid">
-  <!-- Gallery items using real projects and generated texture -->
-  <div class="gallery-item" data-category="interieur" data-project="sejour">
-    <img src="sejour-contemporain-2.webp" alt="Illustration artistique d’un séjour contemporain avec mur orange et accents pastels" loading="lazy">
-    <h4>Séjour contemporain</h4>
-    <p class="location">Sérignan</p>
-    <p class="notes">Pastels &amp; accents</p>
-  </div>
-  <div class="gallery-item" data-category="facades" data-project="cuisine">
-    <img src="project2.webp" alt="Illustration artistique d’une cuisine cosy avec murs en chaux, placards verts pâle et comptoir en bois" loading="lazy">
-    <h4>Cuisine épurée</h4>
-    <p class="location">Marseillan</p>
-    <p class="notes">Limewash &amp; bois</p>
-  </div>
-  <div class="gallery-item" data-category="chaux" data-project="facade">
-    <img src="project3.webp" alt="Illustration artistique d’une façade méditerranéenne avec murs pêche et volets turquoise" loading="lazy">
-    <h4>Façade ensoleillée</h4>
-    <p class="location">Béziers</p>
-    <p class="notes">Pastel pêche &amp; turquoise</p>
-  </div>
-</div>
-    </div>
-
-            </div>
-    /section>
+        <div class="gallery-grid">
+          <!-- Gallery items using real projects and generated texture -->
+          <div class="gallery-item" data-category="interieur" data-project="sejour">
+            <img src="sejour-contemporain-illustration.webp"
+                 alt="Illustration artistique d’un séjour contemporain avec mur orange et accents pastels"
+                 loading="lazy">
+            <h4>Séjour contemporain</h4>
+            <p class="location">Sérignan</p>
+            <p class="notes">Pastels &amp; accents</p>
+          </div>
+          <div class="gallery-item" data-category="facades" data-project="cuisine">
+            <img src="project2.webp"
+                 alt="Illustration artistique d’une cuisine cosy avec murs en chaux, placards verts pâle et comptoir en bois"
+                 loading="lazy">
+            <h4>Cuisine épurée</h4>
+            <p class="location">Marseillan</p>
+            <p class="notes">Limewash &amp; bois</p>
+          </div>
+          <div class="gallery-item" data-category="chaux" data-project="facade">
+            <img src="project3.webp"
+                 alt="Illustration artistique d’une façade méditerranéenne avec murs pêche et volets turquoise"
+                 loading="lazy">
+            <h4>Façade ensoleillée</h4>
+            <p class="location">Béziers</p>
+            <p class="notes">Pastel pêche &amp; turquoise</p>
+          </div>
+        </div><!-- end .gallery-grid -->
+      </div><!-- end .container -->
+    </section>
 
     <!-- Services section -->
     <section id="services" class="services">
@@ -225,25 +225,25 @@
 
     <!-- Avis section -->
     <section id="avis" class="avis">
-  <div class="container">
-    <h2>Avis</h2>
-    <div class="avis-grid">
-      <div class="avis-card">
-        <p>« Travail impeccable, délais respectés et résultat sublime. »</p>
-        <p class="author">— Marie L., Béziers</p>
+      <div class="container">
+        <h2>Avis</h2>
+        <div class="avis-grid">
+          <div class="avis-card">
+            <p>« Travail impeccable, délais respectés et résultat sublime. »</p>
+            <p class="author">— Marie L., Béziers</p>
+          </div>
+          <div class="avis-card">
+            <p>« Très bon conseil couleur et chantier laissé propre. »</p>
+            <p class="author">— Hugo S., Sérignan</p>
+          </div>
+          <div class="avis-card">
+            <p>« Une entreprise sérieuse et à l’écoute, je recommande. »</p>
+            <p class="author">— Claire D., Agde</p>
+          </div>
+        </div>
+        <p class="more-reviews"><a href="https://google.com" target="_blank">Voir tous les avis Google</a></p>
       </div>
-      <div class="avis-card">
-        <p>« Très bon conseil couleur et chantier laissé propre. »</p>
-        <p class="author">— Hugo S., Sérignan</p>
-      </div>
-      <div class="avis-card">
-        <p>« Une entreprise sérieuse et à l’écoute, je recommande. »</p>
-        <p class="author">— Claire D., Agde</p>
-      </div>
-    </div>
-    <p class="more-reviews"><a href="https://google.com" target="_blank">Voir tous les avis Google</a></p>
-  </div>
-</section
+    </section>
 
     <!-- Contact / Devis express section -->
     <section id="contact" class="contact">
@@ -330,9 +330,9 @@
         </ul>
       </div>
       <div class="footer-col contact-col">
-<p>SIRET 880806468108021</p>
-<p>1 rue de l'Amour, 34300 Marseillan</p>
-<p>Tél. 06 95 95 16 31</p> 95 16 31
+        <p>SIRET 880806468108021</p>
+        <p>1 rue de l'Amour, 34300 Marseillan</p>
+        <p>Tél. 06 95 95 16 31</p>
       </div>
       <div class="footer-col legal-col">
         <p><a href="#">Mentions légales</a></p>

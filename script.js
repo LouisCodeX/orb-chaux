@@ -1,4 +1,4 @@
-// JS for mobile navigation toggle and multi-step contact form
+// JS for mobile navigation toggle, multi-step form, gallery filtering and project modals
 document.addEventListener('DOMContentLoaded', function () {
   // Menu toggle logic
   const menuToggle = document.querySelector('.menu-toggle');
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Project modal logic
+  // Project definitions for modals
   const projects = {
     sejour: {
       title: 'Séjour contemporain',
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
       produits: 'Peintures écologiques sans COV',
       delais: '5 jours',
       surface: '32 m²',
-      images: ['living-room.webp']
+      images: ['sejour-contemporain-illustration.webp']
     },
     cuisine: {
       title: 'Cuisine épurée',
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
       produits: 'Laques résistantes à l’humidité',
       delais: '4 jours',
       surface: '18 m²',
-      images: ['kitchen-close.webp','kitchen-living.webp']
+      images: ['kitchen-close.webp', 'kitchen-living.webp']
     },
     facade: {
       title: 'Façade ensoleillée',
@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
+  // Modal handling
   const modal = document.getElementById('project-modal');
   const modalBody = modal ? modal.querySelector('.modal-body') : null;
   const modalClose = modal ? modal.querySelector('.modal-close') : null;
@@ -113,16 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!modal || !modalBody) return;
     const project = projects[key];
     if (!project) return;
-    // Build HTML content for the modal
     let html = `<h3>${project.title} — ${project.location}</h3>`;
-    // Images
     if (project.images && project.images.length) {
       html += '<div class="modal-images">';
       project.images.forEach((img) => {
-        // Note : les images sont placées à la racine du dépôt sur GitHub Pages.  
-        // Auparavant, on préfixait le chemin par `real/`, mais GitHub ne supporte
-        // pas l’envoi de fichiers dans un sous-dossier via l’interface Web.  
-        // On retire donc ce préfixe pour que les images racine soient chargées correctement.
         html += `<img src="${img}" alt="${project.title}">`;
       });
       html += '</div>';
@@ -148,15 +143,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if (modal) {
     modal.addEventListener('click', function (e) {
-      // close when clicking outside content
       if (e.target === modal) {
         closeModal();
       }
     });
   }
 
-  document.querySelectorAll('.gallery-item').forEach((item) => {
-    item.addEventListener('click', function () {
+  // Attach modal open handlers to gallery items
+  galleryItems.forEach((item) => {
+    item.addEventListener('click', () => {
       const key = item.dataset.project;
       openModal(key);
     });
