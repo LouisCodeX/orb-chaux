@@ -956,7 +956,7 @@ https://github.dev/louiscodex/orb-chaux    content: "\2022";
   }
 }
 
-  input[type="file"] {
+input[type="file"] {
   padding: 0.5rem 1rem;
   border: 1px solid var(--primary);
   border-radius: 4px;
@@ -964,4 +964,12 @@ https://github.dev/louiscodex/orb-chaux    content: "\2022";
   color: var(--dark);
   cursor: pointer;
   font-family: inherit;
+
+  .zone .communes-list li::before {
+  content: "\\2022";
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: var(--primary);
+}
+
 }
