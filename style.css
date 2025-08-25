@@ -707,7 +707,7 @@ footer {
 }
 
 .zone .communes-list li::before {
-    content: "\2022";
+https://github.dev/louiscodex/orb-chaux    content: "\2022";
     font-size: 0.8rem;
     margin-right: 0.5rem;
     color: var(--primary);
