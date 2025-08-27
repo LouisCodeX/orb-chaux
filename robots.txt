@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://louiscodex.github.io/orb-chaux/sitemap.xml
+Sitemap: https://orb-chaux.fr/sitemap.xml
