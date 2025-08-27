@@ -12,6 +12,29 @@
   --heading-font: 'Cormorant Garamond', serif;
 }
 
+/* Bouton WhatsApp flottant */
+.whatsapp-floating {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+.whatsapp-floating a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+}
+.whatsapp-floating a:hover {
+  background-color: var(--accent-soft);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
