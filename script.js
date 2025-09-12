@@ -25,6 +25,28 @@ document.addEventListener('DOMContentLoaded', function () {
     card.classList.add('scale-in');
     observer.observe(card);
   });
+
+  // Cool scroll effect for paint roller image
+  const heroImage = document.querySelector('.hero-image img');
+  const heroImageContainer = document.querySelector('.hero-image');
+  
+  if (heroImage && heroImageContainer) {
+    let hasTriggeredSplatter = false;
+    
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+      const rotation = scrolled * 0.1;
+      
+      heroImage.style.transform = `translateY(${rate}px) rotate(${rotation}deg) scale(${1 + scrolled * 0.0001})`;
+      
+      // Trigger paint splatter effect after scrolling 100px
+      if (scrolled > 100 && !hasTriggeredSplatter) {
+        heroImageContainer.classList.add('scrolled');
+        hasTriggeredSplatter = true;
+      }
+    });
+  }
   // Menu toggle logic
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
