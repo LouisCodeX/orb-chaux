@@ -723,21 +723,28 @@ footer {
 }
 
 .zone .communes-list li {
-  position: relative;
-  padding-left: 1.2rem;
+  display: flex;
+  align-items: center;
   font-size: 0.9rem;
   color: var(--muted);
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
 }
 
-.zone .communes-list li::before {
-https://github.dev/louiscodex/orb-chaux    content: "\2022";
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
-    color: var(--primary);
+.zone .communes-list li:hover {
+  color: var(--primary);
 }
 
+.location-icon {
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+  filter: grayscale(0.3);
+  transition: filter 0.2s ease;
+}
 
-  
+.zone .communes-list li:hover .location-icon {
+  filter: grayscale(0);
+  transform: scale(1.1);
 }
 
 /* Floating WhatsApp button */
