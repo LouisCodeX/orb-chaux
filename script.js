@@ -35,13 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
     
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.5;
-      const rotation = scrolled * 0.1;
+      const rate = scrolled * -0.8;
+      const rotation = scrolled * 0.2;
+      const scale = 1 + scrolled * 0.0005;
       
-      heroImage.style.transform = `translateY(${rate}px) rotate(${rotation}deg) scale(${1 + scrolled * 0.0001})`;
+      heroImage.style.transform = `translateY(${rate}px) rotate(${rotation}deg) scale(${scale})`;
       
-      // Trigger paint splatter effect after scrolling 100px
-      if (scrolled > 100 && !hasTriggeredSplatter) {
+      // Trigger paint splatter effect after scrolling 50px
+      if (scrolled > 50 && !hasTriggeredSplatter) {
         heroImageContainer.classList.add('scrolled');
         hasTriggeredSplatter = true;
       }
