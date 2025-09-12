@@ -669,7 +669,7 @@ h1, h2, h3, h4 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -677,7 +677,7 @@ h1, h2, h3, h4 {
   background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .service-card h3 {
@@ -699,7 +699,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
   .service-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
