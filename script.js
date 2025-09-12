@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
       produits: 'Peintures écologiques sans COV',
       delais: '5 jours',
       surface: '32 m²',
-      images: ['sejour-contemporain-illustration.webp']
+      images: ['serignan.jpg']
     },
     cuisine: {
       title: 'Cuisine épurée',
