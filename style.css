@@ -65,11 +65,23 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   width: 100%;
-  background: linear-gradient(135deg, var(--plaster) 0%, rgba(243, 239, 230, 0.95) 100%);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(243, 239, 230, 0.98) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(243, 239, 230, 0.98) 100%);
+  backdrop-filter: blur(15px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(229, 224, 214, 0.3);
-  box-shadow: 0 2px 20px rgba(15, 76, 92, 0.08);
+  border-bottom: 1px solid rgba(224, 122, 95, 0.2);
+  box-shadow: 0 4px 30px rgba(15, 76, 92, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.6;
 }
 
 .navbar .container {
@@ -89,13 +101,29 @@ h1, h2, h3, h4 {
 .logo .wordmark {
   font-family: var(--heading-font);
   font-weight: 700;
-  color: var(--primary);
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--primary-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.logo .wordmark::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  transition: width 0.3s ease;
+}
+
+.logo:hover .wordmark::after {
+  width: 100%;
 }
 
 .logo .descriptor {
@@ -121,16 +149,33 @@ h1, h2, h3, h4 {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
-  padding: 0.6rem 0.8rem;
-  border-radius: 6px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(224, 122, 95, 0.1), transparent);
+  transition: left 0.5s;
 }
 
 .nav-links a:hover {
   color: var(--primary-dark);
-  background-color: rgba(15, 76, 92, 0.08);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, rgba(15, 76, 92, 0.08), rgba(224, 122, 95, 0.05));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 76, 92, 0.15);
+}
+
+.nav-links a:hover::before {
+  left: 100%;
 }
 
 .nav-links a::after {
@@ -139,26 +184,30 @@ h1, h2, h3, h4 {
   bottom: 0;
   left: 50%;
   width: 0;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 2px;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 .nav-links a:hover::after {
-  width: 80%;
+  width: 85%;
 }
 
 .nav-links .cta {
-  background: linear-gradient(135deg, var(--accent) 0%, #d66a4a 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #d66a4a 50%, var(--accent) 100%);
+  background-size: 200% 200%;
   color: var(--white);
   border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 25px;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(224, 122, 95, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  animation: gradientShift 3s ease-in-out infinite;
 }
 
 .nav-links .cta::before {
@@ -168,18 +217,41 @@ h1, h2, h3, h4 {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.nav-links .cta::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
 
 .nav-links .cta:hover {
-  background: linear-gradient(135deg, #d66a4a 0%, var(--accent) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(224, 122, 95, 0.4);
+  background: linear-gradient(135deg, #d66a4a 0%, var(--accent) 50%, #d66a4a 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(224, 122, 95, 0.5), 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .nav-links .cta:hover::before {
   left: 100%;
+}
+
+.nav-links .cta:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 /* Mobile navigation */
