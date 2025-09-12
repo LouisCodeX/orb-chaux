@@ -418,7 +418,7 @@ h1, h2, h3, h4 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
@@ -448,7 +448,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
   .service-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
@@ -955,7 +955,9 @@ https://github.dev/louiscodex/orb-chaux    content: "\2022";
   .hero-content {
     flex-direction: column;
   }
-  .service-grid,
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
   .gallery-grid,
   .avis-grid {
     grid-template-columns: repeat(2, 1fr);
