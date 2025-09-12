@@ -1,5 +1,30 @@
 // JS for mobile navigation toggle, multi-step form, gallery filtering and project modals
 document.addEventListener('DOMContentLoaded', function () {
+  // Apple-style scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections for fade-in animations
+  document.querySelectorAll('section').forEach(section => {
+    section.classList.add('fade-in');
+    observer.observe(section);
+  });
+
+  // Observe cards for scale-in animations
+  document.querySelectorAll('.promise-card, .gallery-item, .service-card, .faq-item').forEach(card => {
+    card.classList.add('scale-in');
+    observer.observe(card);
+  });
   // Menu toggle logic
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
