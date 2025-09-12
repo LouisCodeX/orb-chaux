@@ -26,23 +26,35 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(card);
   });
 
-  // Cool scroll effect for paint roller image
+  // Realistic painting movement simulation for paint roller
   const heroImage = document.querySelector('.hero-image img');
   const heroImageContainer = document.querySelector('.hero-image');
   
   if (heroImage && heroImageContainer) {
     let hasTriggeredSplatter = false;
+    let paintingProgress = 0;
     
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.8;
-      const rotation = scrolled * 0.2;
-      const scale = 1 + scrolled * 0.0005;
+      const maxScroll = 800; // Total scroll distance for full painting motion
       
-      heroImage.style.transform = `translateY(${rate}px) rotate(${rotation}deg) scale(${scale})`;
+      // Calculate painting progress (0 to 1)
+      paintingProgress = Math.min(scrolled / maxScroll, 1);
       
-      // Trigger paint splatter effect after scrolling 50px
-      if (scrolled > 50 && !hasTriggeredSplatter) {
+      // Simulate painting movement: roller moves horizontally while painting
+      const horizontalMovement = paintingProgress * 60; // Move 60px horizontally
+      const verticalMovement = Math.sin(paintingProgress * Math.PI * 2) * 8; // Subtle up/down motion
+      const slightRotation = Math.sin(paintingProgress * Math.PI * 4) * 3; // Small rotation for realism
+      
+      // Apply the painting motion
+      heroImage.style.transform = `
+        translateX(${horizontalMovement}px) 
+        translateY(${verticalMovement}px) 
+        rotate(${slightRotation}deg)
+      `;
+      
+      // Trigger paint splatter effect after some painting progress
+      if (paintingProgress > 0.1 && !hasTriggeredSplatter) {
         heroImageContainer.classList.add('scrolled');
         hasTriggeredSplatter = true;
       }
