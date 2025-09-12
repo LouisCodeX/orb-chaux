@@ -582,6 +582,40 @@ h1, h2, h3, h4 {
 }
 
 
+/* FAQ */
+.faq {
+  padding: 64px 0;
+  background-color: var(--plaster);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.faq-item {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(15, 76, 92, 0.05);
+}
+
+.faq-item h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
 /* Avis */
 .avis {
   padding: 64px 0;
@@ -746,6 +780,7 @@ footer {
 .services h2::after,
 .process h2::after,
 .zone h2::after,
+.faq h2::after,
 .avis h2::after,
 .contact h2::after {
   content: '';
