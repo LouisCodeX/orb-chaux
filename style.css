@@ -141,13 +141,13 @@ h1, h2, h3, h4 {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
+  height: 1px;
   background: var(--accent);
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--primary-dark);
 }
 
 .nav-links a:hover::after {
@@ -163,14 +163,12 @@ h1, h2, h3, h4 {
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
   margin-left: 1rem;
 }
 
 .nav-links .cta:hover {
   background: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 76, 92, 0.2);
 }
 
 @keyframes gradientShift {
